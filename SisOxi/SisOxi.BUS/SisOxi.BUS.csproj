@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2664988-C11E-4128-97D5-BC542B88D7A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SisOxi.BUS</RootNamespace>
+    <AssemblyName>SisOxi.BUS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Seguridad\AuditoriaBUS.cs" />
+    <Compile Include="Seguridad\ConexionBUS.cs" />
+    <Compile Include="Mantenimiento\DatosClinicosBUS.cs" />
+    <Compile Include="Mantenimiento\EmpleadoBUS.cs" />
+    <Compile Include="Mantenimiento\EnfermedadBUS.cs" />
+    <Compile Include="Control de Tratamiento\ExamenGabineteBUS.cs" />
+    <Compile Include="Mantenimiento\HistoriaClinicaBUS.cs" />
+    <Compile Include="Control de Tratamiento\ImpresionDiagnosticaBUS.cs" />
+    <Compile Include="Seguridad\LoginBUS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Control de Tratamiento\SesionesTratamientoBUS.cs" />
+    <Compile Include="Control de Tratamiento\TipoExamenBUS.cs" />
+    <Compile Include="Control de Tratamiento\TratamientoAlternoBUS.cs" />
+    <Compile Include="Control de Tratamiento\TratamientoBUS.cs" />
+    <Compile Include="Control de Tratamiento\TratamientoCamaraHiperbaricaBUS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SisOxi.DAO\SisOxi.DAL.csproj">
+      <Project>{528c46b4-4cd6-48d4-b5eb-b96084ad64f1}</Project>
+      <Name>SisOxi.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SisOxi.VO\SisOxi.VO.csproj">
+      <Project>{f05dcb59-adda-4f75-a8bb-8665ba830785}</Project>
+      <Name>SisOxi.VO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinFormTelerikDS\WinFormTelerikDS.csproj">
+      <Project>{0e07f88e-b941-4433-82e2-8ee878e3524c}</Project>
+      <Name>WinFormTelerikDS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
